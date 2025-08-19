@@ -30,12 +30,12 @@ def generate_launch_description():
         'config_path', default_value=default_config_path,
         description='Yaml config file path'
     )
-    decalre_config_file_cmd = DeclareLaunchArgument(
-        'config_file', default_value='mid360.yaml',
+    declare_config_file_cmd = DeclareLaunchArgument(
+        'config_file', default_value='mid360_custom.yaml',
         description='Config file'
     )
     declare_rviz_cmd = DeclareLaunchArgument(
-        'rviz', default_value='true',
+        'rviz', default_value='false',
         description='Use RViz to monitor results'
     )
     declare_rviz_config_path_cmd = DeclareLaunchArgument(
@@ -60,7 +60,7 @@ def generate_launch_description():
     ld = LaunchDescription()
     ld.add_action(declare_use_sim_time_cmd)
     ld.add_action(declare_config_path_cmd)
-    ld.add_action(decalre_config_file_cmd)
+    ld.add_action(declare_config_file_cmd)
     ld.add_action(declare_rviz_cmd)
     ld.add_action(declare_rviz_config_path_cmd)
 
